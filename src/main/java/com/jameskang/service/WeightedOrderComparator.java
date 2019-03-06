@@ -1,7 +1,7 @@
 package com.jameskang.service;
 
 import com.jameskang.domain.Order;
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.time.LocalTime;
 import java.util.Comparator;
@@ -55,6 +55,6 @@ public class WeightedOrderComparator implements Comparator<Order> {
 			locationRank.add(distanceFromFactory(order.getCoordinate()));
 		}
 
-		return new Pair<>(timeRank, locationRank);
+		return Pair.of(timeRank, locationRank);
 	}
 }
