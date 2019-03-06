@@ -2,3 +2,10 @@ Assumptions
 --
 - Drone needs to be back at factory by 10PM
 - Orders that are impossible to fulfill within the time requirements (ex: order made at 9:55PM and location is 20 minutes away) are ignored
+- Example doesn't have correct numbers (ie order 3 is 57 min away and yet drones left from factory before 6?)
+
+Possible improvements
+--
+- More rigorous validations for input
+- Better algorithm for maximizing NPS (https://stackoverflow.com/questions/30449023/efficient-implementation-of-multi-factor-weighted-sorting-in-java points out deficiency in current implementation)
+- Currently handling location strictly as absolute distance from factory, therefore only positive numbers. But maybe `S5W3` should be interested as `(-5,-3)` to future proof

@@ -8,6 +8,9 @@ import java.util.List;
 
 import static com.jameskang.DroneDeliveryChallengeApplication.START_TIME;
 
+/**
+ * Handles operations pertaining to an order
+ */
 public class OrderService {
 	private List<Order> orders;
 

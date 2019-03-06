@@ -2,16 +2,19 @@ package com.jameskang.domain;
 
 import java.time.LocalTime;
 
+/**
+ * Representation of an order
+ */
 public class Order {
 	private String id;
-	private Coordinate location;
+	private Coordinate coordinate;
 	private LocalTime timeOrderMade;
 	private LocalTime timeOrderFulfilled;
 	private LocalTime timeDroneDeparted;
 
-	public Order(String id, Coordinate location, LocalTime timeOrderMade) {
+	public Order(String id, Coordinate coordinate, LocalTime timeOrderMade) {
 		this.id = id;
-		this.location = location;
+		this.coordinate = coordinate;
 		this.timeOrderMade = timeOrderMade;
 		this.timeOrderFulfilled = null;
 		this.timeDroneDeparted = null;
@@ -25,12 +28,12 @@ public class Order {
 		this.id = id;
 	}
 
-	public Coordinate getLocation() {
-		return location;
+	public Coordinate getCoordinate() {
+		return coordinate;
 	}
 
-	public void setLocation(Coordinate location) {
-		this.location = location;
+	public void setCoordinate(Coordinate coordinate) {
+		this.coordinate = coordinate;
 	}
 
 	public LocalTime getTimeOrderMade() {

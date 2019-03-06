@@ -1,15 +1,15 @@
 package com.jameskang.domain;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+/**
+ * Representation of location as a coordinate
+ */
 public class Coordinate {
 	private int x;
 	private Direction xLabel;
 	private int y;
 	private Direction yLabel;
 
-	public Coordinate(int x, Direction xLabel, int y, Direction yLabel) {
+	Coordinate(int x, Direction xLabel, int y, Direction yLabel) {
 		this.x = x;
 		this.xLabel = xLabel;
 		this.y = y;

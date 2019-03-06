@@ -4,6 +4,9 @@ import com.google.common.collect.ImmutableList;
 
 import java.util.List;
 
+/**
+ * Representation of a drone that fulfills orders
+ */
 public class Drone {
 	private List<Order> ordersFulfilled;
 

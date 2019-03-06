@@ -13,16 +13,13 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+/**
+ * Handles I/O
+ */
 public class ParsingService {
-	public static Order parseStringToOrder(String line) {
-		String[] parsedLine = line.split(" ");
-
-		DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-		LocalTime timeOrderMade = LocalTime.parse(parsedLine[2], timeFormatter);
-
-		return new Order(parsedLine[0], CoordinateHelper.coordinateFromString(parsedLine[1]), timeOrderMade);
-	}
-
+	/**
+	 * @return orders interpreted from the given input file
+	 */
 	public static List<Order> parseFileToOrders(String absoluteFilePath) {
 		BufferedReader reader;
 		ImmutableList.Builder<Order> orderBuilder = ImmutableList.builder();
@@ -44,6 +41,9 @@ public class ParsingService {
 		}
 	}
 
+	/**
+	 * Writes the expected output file at ./output.txt
+	 */
 	public static void writeOutputFile(List<Order> orders, double nps) throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter("./output.txt"));
 
@@ -55,5 +55,14 @@ public class ParsingService {
 		writer.write("NPS " + nps);
 
 		writer.close();
+	}
+
+	private static Order parseStringToOrder(String line) {
+		String[] parsedLine = line.split(" ");
+
+		DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+		LocalTime timeOrderMade = LocalTime.parse(parsedLine[2], timeFormatter);
+
+		return new Order(parsedLine[0], CoordinateHelper.coordinateFromString(parsedLine[1]), timeOrderMade);
 	}
 }
