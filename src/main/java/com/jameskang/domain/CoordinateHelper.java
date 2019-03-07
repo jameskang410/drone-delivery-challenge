@@ -18,7 +18,7 @@ public class CoordinateHelper {
 			throw new IllegalArgumentException("Invalid format given for coordinate");
 		}
 
-		return new Coordinate(Integer.valueOf(matcher.group(2)), Direction.valueOf(matcher.group(1)), Integer.valueOf(matcher.group(4)), Direction.valueOf(matcher.group(3)));
+		return new Coordinate(Integer.valueOf(matcher.group(4)), Direction.valueOf(matcher.group(3)), Integer.valueOf(matcher.group(2)), Direction.valueOf(matcher.group(1)));
 	}
 
 	/**

@@ -1,5 +1,7 @@
 package com.jameskang.domain;
 
+import java.util.Objects;
+
 /**
  * Representation of location as a coordinate
  */
@@ -9,7 +11,7 @@ public class Coordinate {
 	private int y;
 	private Direction yLabel;
 
-	Coordinate(int x, Direction xLabel, int y, Direction yLabel) {
+	public Coordinate(int x, Direction xLabel, int y, Direction yLabel) {
 		this.x = x;
 		this.xLabel = xLabel;
 		this.y = y;
@@ -46,5 +48,31 @@ public class Coordinate {
 
 	public void setyLabel(Direction yLabel) {
 		this.yLabel = yLabel;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Coordinate that = (Coordinate) o;
+		return x == that.x &&
+				y == that.y &&
+				xLabel == that.xLabel &&
+				yLabel == that.yLabel;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(x, xLabel, y, yLabel);
+	}
+
+	@Override
+	public String toString() {
+		return "Coordinate{" +
+				"x=" + x +
+				", xLabel=" + xLabel +
+				", y=" + y +
+				", yLabel=" + yLabel +
+				'}';
 	}
 }

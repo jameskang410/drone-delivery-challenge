@@ -14,8 +14,8 @@ public class DroneService {
 	/**
 	 * @return boolean based on if drone can fulfill order based on: order's distance from factory, the current time, and deadline
 	 */
-	public static boolean canDroneFulfillOrder(LocalTime currentTime, LocalTime deadLine, Order order) {
-		return currentTime.isAfter(order.getTimeOrderMade()) && currentTime.plus(durationToFulfillOrder(order)).isBefore(deadLine);
+	public static boolean canDroneFulfillOrder(LocalTime currentTime, LocalTime deadline, Order order) {
+		return currentTime.isAfter(order.getTimeOrderMade()) && currentTime.plus(durationToFulfillOrder(order)).isBefore(deadline);
 	}
 
 	/**

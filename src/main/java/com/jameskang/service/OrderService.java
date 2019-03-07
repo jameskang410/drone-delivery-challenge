@@ -24,7 +24,7 @@ public class OrderService {
 
 
 	public double calculateNPS() {
-		return 100 *  ((double) getPromotersCount() / orders.size()) - ((double) getDetractorsCount() / orders.size());
+		return 100 * (((double) getPromotersCount() / orders.size()) - ((double) getDetractorsCount() / orders.size()));
 	}
 
 	private long getPromotersCount() {
