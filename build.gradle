@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+apply plugin: 'java'
+
 group 'com.jameskang'
 version '1.0-SNAPSHOT'
 
@@ -24,7 +26,10 @@ jar {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'junit', name: 'junit', version: '4.12'
+
     testCompile group: 'org.hamcrest', name: 'hamcrest', version: '2.1'
+    compile group: 'org.hamcrest', name: 'hamcrest', version: '2.1'
 
     compile 'com.google.guava:guava:27.0.1-jre'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'

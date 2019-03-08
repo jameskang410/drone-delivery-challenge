@@ -1,6 +1,7 @@
 Instructions
 --
-`./run /absolute/file/name/here.txt` will output a `output.txt` file in the parent directory with the results
+- `./run /absolute/file/name/here.txt` will output a `output.txt` file in the parent directory with the results
+- `./gradlew clean test` will run all tests
 
 Assumptions
 --
