@@ -7,7 +7,7 @@ Assumptions
 --
 - Drone needs to be back at factory by 10PM
 - Orders that are impossible to fulfill within the time requirements (ex: order made at 9:55PM and location is 20 minutes away) are ignored
-- Example doesn't have correct numbers (ie order 3 is 57 min away and yet drones left from factory before 6?)
+- Orders that are made before the drone's starting time do not count against NPS (ex: order made at 1AM and fulfilled at 6:10AM does not count as a detractor)
 
 Possible improvements
 --
