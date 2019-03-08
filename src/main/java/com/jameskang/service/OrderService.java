@@ -42,6 +42,7 @@ public class OrderService {
 	private long hoursToFulfillOrder(Order order) {
 		LocalTime startingTime = order.getTimeOrderMade();
 
+		// assumption: not penalized for orders that were made before start time
 		if (startingTime.isBefore(START_TIME)) {
 			startingTime = START_TIME;
 		}
